@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General modal styling */
+        .modal, .confirm-modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content, .confirm-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Specific styling for confirmation modal */
+        .confirm-content h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .confirm-content p {
+            margin-bottom: 20px;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .confirm-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .confirm-buttons button.cancel {
+            background-color: #f44336;
+        }
+
+        .confirm-buttons button:hover {
+            opacity: 0.8;
+        }
+
+        /* Success modal styling */
+        .modal h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .modal button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        // Show confirmation modal when submitting form
+        function showConfirmation(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('confirmModal').style.display = 'flex'; // Show confirmation modal
+        }
+
+        // When user clicks "Yes", show the success popup and submit form
+        function confirmSend() {
+            document.getElementById('confirmModal').style.display = 'none'; // Hide confirmation modal
+            document.getElementById('myModal').style.display = 'flex'; // Show success modal
+        }
+
+        // When user clicks "Cancel", hide the confirmation modal
+        function cancelSend() {
+            document.getElementById('confirmModal').style.display = 'none'; // Hide confirmation modal
+        }
+
+        // Close the success modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none'; // Hide success modal
+        }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <script src="apps.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact Us</h1>
+        <section class="contact">
+            <p>Email: <a href="mailto:2311532011_rifki@student.unand.ac.id">2311532011_rifki@student.unand.ac.id</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/rifki-yuliandra-957774287/" target="_blank">Rifki Yuliandra</a></p>
+            <p>GitHub: <a href="https://github.com/Alone1011" target="_blank">Rifki Yuliandra</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/r_kiylndr_/" target="_blank">@r_kiylndr_</a></p>
+        </section>
+
+        <form action="submit_form.php" method="POST" onsubmit="showConfirmation(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="question">Question</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="issue">Issue</option>
+            </select>
+
+            <label>Would you like to receive a reply?</label>
+            <div class="radio-group">
+                <input type="radio" id="reply_yes" name="reply" value="yes">
+                <label for="reply_yes">Yes</label>
+                <input type="radio" id="reply_no" name="reply" value="no">
+                <label for="reply_no">No</label>
+            </div>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <!-- Confirmation Modal Structure -->
+    <div id="confirmModal" class="confirm-modal modal">
+        <div class="confirm-content">
+            <h2>Confirm Submission</h2>
+            <p>Are you sure you want to send this message?</p>
+            <div class="confirm-buttons">
+                <button onclick="confirmSend()">Yes</button>
+                <button class="cancel" onclick="cancelSend()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Thank you!</h2>
+            <p>Your message has been sent successfully.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</body>
+</html>
