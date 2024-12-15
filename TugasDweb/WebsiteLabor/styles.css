@@ -1,0 +1,362 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-family: "Righteous", sans-serif;
+  /* font-family: "Matemasie", sans-serif; */
+  /* font-family: "Erica One", sans-serif; */
+  font-weight: 700;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/hero-background.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.hero h1 {
+  color: #4cc9fe;
+  font-family: "Righteous", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+  background-color: #4cc9fe;
+  border-color: #4cc9fe;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.hero .btn-primary:hover {
+  background-color: #1f3d58;
+}
+
+.hero-2 {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/hero-background-2.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.hero-2 .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Transparansi gelap */
+  z-index: 1;
+}
+
+.hero-2 .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-2 h3 {
+  color: #4cc9fe;
+  font-family: "Righteous", sans-serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-2 p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  color: #ffffff;
+}
+
+.deskripsi .card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  animation: fadeInUp 0.6s ease-in-out;
+  height: 100%;
+}
+
+.deskripsi .podcast-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.deskripsi .btn-primary {
+  background-color: #4cc9fe;
+  border-color: #4cc9fe;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.deskripsi .btn-primary:hover {
+  background-color: #1f3d58;
+}
+
+.aslab .card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  animation: fadeInUp 0.6s ease-in-out;
+  height: 100%;
+}
+
+.aslab .podcast-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.aslab .btn-primary {
+  background-color: #4cc9fe;
+  border-color: #4cc9fe;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.aslab .btn-primary:hover {
+  background-color: #1f3d58;
+}
+
+.jadwal .podcast-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jadwal .card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.jadwal .btn-primary {
+  background-color: #4cc9fe;
+  border-color: #4cc9fe;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 50px;
+}
+
+.jadwal .btn-primary:hover {
+  background-color: #1f3d58;
+  transform: scale(1.1);
+}
+
+/* Sticky Navbar */
+.navbar-transparent {
+  background-color: transparent !important;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-dark.bg-dark-scrolled {
+  background-color: rgba(0, 0, 0, 1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Ketebalan garis */
+  background-color: #4cc9fe; /* Warna garis */
+  transition: width 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #4cc9fe; /* Warna teks saat hover */
+  transform: scale(1.1);
+}
+
+.nav-link:hover:after {
+  width: 100%; /* Garis memanjang penuh saat hover */
+}
+
+.testimonial {
+  height: 80vh; /* Menambahkan tinggi minimum */
+  background: url("images/testimonial-background.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 60px 0;
+  color: white;
+}
+
+.testimonial .testimonial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Transparansi gelap */
+  z-index: 1;
+}
+
+.testimonial .container {
+  position: relative;
+  z-index: 2; /* Agar konten berada di atas overlay */
+}
+
+.testimonial h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.testimonial-card {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  height: auto;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial-card .author {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.testimonial-card .author img {
+  margin-right: 10px;
+}
+
+.testimonial-card .author .name {
+  font-weight: bold;
+}
+
+.testimonial-card .author .position {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer {
+  padding: 30px 0;
+  color: white;
+  font-size: 14px;
+  background-color: #1f3d58; /* Tetap warna putih */
+}
+
+.footer h5 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer .text-link {
+  position: relative;
+  color: inherit;
+  text-decoration: none; /* Menghilangkan underline bawaan */
+  transition: color 0.3s ease;
+}
+
+.footer .text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.footer .text-link:hover::after {
+  width: 100%; /* Efek garis bawah muncul */
+}
+
+.footer .text-link:hover {
+  color: #f1f1f1; /* Warna teks saat hover */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer .fa-brands {
+  font-size: 18px;
+  margin-right: 10px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer .fa-brands:hover {
+  color: #007bff;
+}
